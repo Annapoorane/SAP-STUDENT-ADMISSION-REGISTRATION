@@ -1,0 +1,64 @@
+managed implementation in class ZZSTBP_R_STUD_ADM_TAB_03003 unique;
+strict ( 2 );
+with draft;
+extensible;
+define behavior for ZZSTR_STUD_ADM_TAB_03003 alias ZzstrStudAdmTab03003
+persistent table ZSTUD_ADM_TAB_03
+extensible
+draft table ZZSTSTD_ADM_D003
+etag master LocalLastChangedAt
+lock master total etag LastChangedAt
+authorization master( global )
+{
+  field ( mandatory : create )
+   StudentID;
+
+  field ( readonly )
+   LocalCreatedBy,
+   LocalCreatedAt,
+   LocalLastChangedBy,
+   LocalLastChangedAt,
+   LastChangedAt;
+
+  field ( readonly : update )
+   StudentID;
+
+
+  create;
+  update;
+  delete;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for ZSTUD_ADM_TAB_03 corresponding extensible
+  {
+    StudentID = STUDENT_ID;
+    FirstName = FIRST_NAME;
+    LastName = LAST_NAME;
+    Gender = GENDER;
+    DateOfBirth = DATE_OF_BIRTH;
+    PhoneNumber = PHONE_NUMBER;
+    EmailID = EMAIL_ID;
+    CourseID = COURSE_ID;
+    CourseName = COURSE_NAME;
+    Department = DEPARTMENT;
+    AdmissionDate = ADMISSION_DATE;
+    AcademicYear = ACADEMIC_YEAR;
+    Semester = SEMESTER;
+    CukyField = CUKY_FIELD;
+    TotalFees = TOTAL_FEES;
+    FeesPaid = FEES_PAID;
+    FeesBalance = FEES_BALANCE;
+    AdmissionStatus = ADMISSION_STATUS;
+    LocalCreatedBy = LOCAL_CREATED_BY;
+    LocalCreatedAt = LOCAL_CREATED_AT;
+    LocalLastChangedBy = LOCAL_LAST_CHANGED_BY;
+    LocalLastChangedAt = LOCAL_LAST_CHANGED_AT;
+    LastChangedAt = LAST_CHANGED_AT;
+  }
+
+}

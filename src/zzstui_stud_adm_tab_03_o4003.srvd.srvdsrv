@@ -1,0 +1,11 @@
+@EndUserText: {
+  label: 'Service Definition for ZZSTC_STUD_ADM_TAB_03003'
+}
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZZSTC_STUD_ADM_TAB_03003'
+  }
+}
+define service ZZSTUI_STUD_ADM_TAB_03_O4003 provider contracts odata_v4_ui {
+  expose ZZSTC_STUD_ADM_TAB_03003;
+}

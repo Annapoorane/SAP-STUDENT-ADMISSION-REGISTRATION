@@ -1,0 +1,6 @@
+@EndUserText.label: 'ZZSTC_STUD_ADM_TAB_03003'
+@MappingRole: true
+define role ZZSTC_STUD_ADM_TAB_03003 {
+  grant select on ZZSTC_STUD_ADM_TAB_03003
+  where INHERITING CONDITIONS FROM ENTITY ZZSTR_STUD_ADM_TAB_03003 REPLACING { ROOT WITH _BaseEntity };
+}
